@@ -1,0 +1,6 @@
+ato-version: ^0.2.0
+builds:
+  default:
+    entry: elec/src/or-gate1.ato:OrGate1
+dependencies:
+- generics

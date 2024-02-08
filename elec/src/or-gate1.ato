@@ -1,0 +1,2 @@
+module OrGate1:
+    signal gnd
