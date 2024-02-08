@@ -1,2 +1,48 @@
+
+
+
+
+import NSS60601MZ4T1G from "NSS60601MZ4T1G.ato"
+import Resistor from "generics/resistors.ato"
+import KT_0603R from "generics/KT-0603R.ato"
+import Power from "generics/interfaces.ato"
+
 module OrGate1:
-    signal gnd
+    power_interface = new Power
+    transistor1 = new NSS60601MZ4T1G
+    transistor2 = new NSS60601MZ4T1G
+    output_led = new KT_0603R
+    pullup_resistor = new Resistor
+    pullup_resistor.value = "10kohm +/- 5%"
+    pullup_resistor.footprint = "R0402"
+    input_resistor1 = new Resistor
+    input_resistor1.value = "1kohm +/- 5%"
+    input_resistor1.footprint = "R0402"
+    input_resistor2 = new Resistor
+    input_resistor2.value = "1kohm +/- 5%"
+    input_resistor2.footprint = "R0402"
+
+    # Setup connections
+    power_interface.vcc ~ pullup_resistor.p1
+    pullup_resistor.p2 ~ output_led.A
+    output_led.K ~ power_interface.gnd
+
+    # Transistor connections for OR logic
+    power_interface.vcc ~ input_resistor1.p1
+    power_interface.vcc ~ input_resistor2.p1
+    input_resistor1.p2 ~ transistor1.B
+    input_resistor2.p2 ~ transistor2.B
+    transistor1.C ~ transistor2.C
+    transistor1.E ~ power_interface.gnd
+    transistor2.E ~ power_interface.gnd
+    transistor2.C ~ pullup_resistor.p2
+
+    # Signal inputs
+    signal input1
+    signal input2
+
+    # Connect signal inputs to resistors leading to transistor Bs
+    input1 ~ input_resistor1.p1
+    input2 ~ input_resistor2.p1
+
+

@@ -1,0 +1,11 @@
+component NSS60601MZ4T1G:
+    # component NSS60601MZ4T1G
+    footprint = "SOT-223-3_L6.5-W3.4-P2.30-LS7.0-BR"
+    lcsc_id = "C99985"
+    mpn = "C99985"
+    # pins
+    signal C ~ pin 2
+    signal B ~ pin 1
+    signal E ~ pin 3
+    C ~ pin 4
+
