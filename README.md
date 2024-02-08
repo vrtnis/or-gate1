@@ -1,3 +1,3 @@
 # or-gate1
 
-Wooohooo a new package!
+A simple OR gate built using atopile
