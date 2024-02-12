@@ -1,9 +1,7 @@
-ato-version: ^0.2.0
+ato-version: ^0.2.9
 builds:
   default:
     entry: elec/src/or-gate1.ato:OrGate1
 dependencies:
 - generics
 - usb-connectors^v2.0.0  # Assuming USB connectors are used for power supply
-- interfaces^1.0.0  # For the Power interface
-- transistors^1.0.0
