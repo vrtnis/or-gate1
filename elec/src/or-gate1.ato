@@ -1,10 +1,6 @@
-
-
-
-
 import NSS60601MZ4T1G from "NSS60601MZ4T1G.ato"
 import Resistor from "generics/resistors.ato"
-import KT_0603R from "generics/KT-0603R.ato"
+import KT_0603R from "KT-0603R.ato"
 import Power from "generics/interfaces.ato"
 
 module OrGate1:
@@ -13,13 +9,13 @@ module OrGate1:
     transistor2 = new NSS60601MZ4T1G
     output_led = new KT_0603R
     pullup_resistor = new Resistor
-    pullup_resistor.value = "10kohm +/- 5%"
+    pullup_resistor.value = 10kohm +/- 10%
     pullup_resistor.footprint = "R0402"
     input_resistor1 = new Resistor
-    input_resistor1.value = "1kohm +/- 5%"
+    input_resistor1.value = 1kohm +/- 10%
     input_resistor1.footprint = "R0402"
     input_resistor2 = new Resistor
-    input_resistor2.value = "1kohm +/- 5%"
+    input_resistor2.value = 1kohm +/- 10%
     input_resistor2.footprint = "R0402"
 
     # Setup connections
