@@ -382,6 +382,7 @@
     )
   )
 
+
   (gr_rect (start 124.46 71.12) (end 172.72 106.68)
     (stroke (width 0.05) (type default)) (fill none) (layer "Edge.Cuts") (tstamp e041dc5a-1e73-4cb2-8705-8c261c72ca25))
   (image (at 129.54 76.2) (layer "Edge.Cuts") (scale 0.0734377)
